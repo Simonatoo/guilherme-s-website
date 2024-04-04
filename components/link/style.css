@@ -18,7 +18,12 @@ li:hover {
     color: var(--color-primary-hover)
 }
 
+li:hover .r-45 {
+    rotate: 0deg;
+}
+
 .r-45 {
+    transition: 500ms;
     rotate: -45deg;
 }
 

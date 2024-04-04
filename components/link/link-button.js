@@ -1,4 +1,4 @@
-class Link extends HTMLElement {
+export class Link extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' })
@@ -31,5 +31,3 @@ class Link extends HTMLElement {
         this.shadowRoot.appendChild = '<link rel="stylesheet" href="./style/global.css">'
     }
 }
-
-customElements.define('ds-link', Link)
