@@ -47,6 +47,7 @@ body {
 .row {
     display: flex;
     gap: 48px;
+    animation: row 1000ms;
 }
 
 .w-80 {
@@ -137,4 +138,9 @@ button {
     align-items: start;
     margin-bottom: 36px;
     justify-content: space-between;
+}
+
+@keyframes row {
+    0% {opacity: 0; margin-top: -10px;}
+    100% {opacity: 100; margin-top: 0;}
 }
