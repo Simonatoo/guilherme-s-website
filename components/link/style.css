@@ -1,0 +1,32 @@
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    align-items: center;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+li:hover {
+    color: var(--color-primary-hover)
+}
+
+.r-45 {
+    rotate: -45deg;
+}
+
+.disabled {
+    color: var(--color-disabled);
+    cursor: not-allowed;
+    font-weight: 400;
+}
+.disabled:hover {
+    color: var(--color-disabled);
+}
