@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <script type="module" src="./components/index.js"></script>
+    <title>Guilherme Simonato</title>
+</head>
+
+
+<body>
+    <div class="row">
+        <div class="column w-80">
+            <ds-header></ds-header>
+            <button onclick="window.location.href='index.html'" class="link cta mb-lg">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                Back
+            </button>
+            <h1 class="mb-lg c-white">
+                Personalização de Páginas de Ecommerce Whitelabel usando Tokens no Figma, Tokens Studio e GitHub 
+            </h1>
+            <div class="about-me c-white">
+                <h2>Contexto</h2>
+                <p>
+                    A empresa X, uma plataforma de ecommerce que oferece soluções whitelabel para diversos clientes, estava enfrentando desafios para personalizar rapidamente as páginas de seus clientes. Cada cliente tinha necessidades específicas de design, o que exigia um grande esforço da equipe de design para criar e manter essas personalizações.
+                </p>
+            </div>
+            <div class="about-me c-white">
+                <h2>O problema</h2>
+                <p>
+                    O processo manual de personalização era demorado e propenso a erros, resultando em atrasos na entrega e inconsistências visuais. A empresa precisava de uma solução que permitisse criar e gerenciar personalizações de forma eficiente, mantendo a consistência do design e a qualidade visual.
+                </p>
+            </div>
+        </div>
+        <div class="column w-20">
+            <ds-navigation></ds-navigation>
+        </div>
+    </div>
+
+    <!-- Icon import -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
