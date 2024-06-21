@@ -8,10 +8,9 @@ export class Navigation extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="./style/global.css">
             <ul>
-                <p>Projects</p>
-                <ds-link type="closed">Splitcost</ds-link>
-                <ds-link type="closed">Carpii</ds-link>
-                <ds-link type="closed">Contabuleiro</ds-link>
+                <p>Cases</p>
+                <ds-link link="./docs/tokens.html">Tokens for whitelabel</ds-link>
+                <ds-link type="closed">Fintech product UI</ds-link>
             </ul>
             <ul>
                 <p>Personal projects</p>
