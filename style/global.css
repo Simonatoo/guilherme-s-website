@@ -36,6 +36,9 @@ h1 {
 .mb-lg {
     margin-bottom: 28px;
 }
+.mb-md {
+    margin-bottom: 16px;
+}
 
 body {
     background-color: #272727;
