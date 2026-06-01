@@ -522,6 +522,135 @@ opacity:1;
 }
 
 /* =========================
+AVISO / TERMO DE USO
+========================= */
+
+.warn-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:flex;
+justify-content:center;
+align-items:center;
+backdrop-filter:blur(4px);
+padding:20px;
+z-index:3000;
+transition:.2s linear;
+}
+
+.warn-overlay.hidden{
+opacity:0;
+pointer-events:none;
+}
+
+.warn-box{
+width:min(100%,520px);
+background:#efefef;
+border:1px solid #444;
+padding:10px;
+box-shadow:0 8px 24px rgba(0,0,0,.3);
+}
+
+.warn-box .top{
+background:#5a97df;
+color:white;
+padding:14px 12px;
+margin-bottom:10px;
+}
+
+.warn-box .top small{
+display:block;
+font-size:13px;
+margin-bottom:6px;
+}
+
+.warn-box .top h2{
+font-size:30px;
+line-height:1.05;
+}
+
+.warn-body{
+padding:4px 12px 12px;
+}
+
+.warn-body p{
+font-size:16px;
+line-height:1.45;
+margin-bottom:14px;
+color:#222;
+}
+
+.warn-body ul{
+list-style:none;
+margin:0 0 16px;
+padding:0;
+}
+
+.warn-body li{
+font-size:15px;
+line-height:1.4;
+padding:6px 0 6px 26px;
+position:relative;
+color:#333;
+border-bottom:1px solid #ddd;
+}
+
+.warn-body li::before{
+content:"⚠";
+position:absolute;
+left:0;
+top:6px;
+color:#c9002b;
+font-size:15px;
+}
+
+.warn-accept{
+display:flex;
+align-items:flex-start;
+gap:10px;
+margin:16px 0 18px;
+font-size:15px;
+cursor:pointer;
+user-select:none;
+}
+
+.warn-accept input{
+width:20px;
+height:20px;
+margin-top:2px;
+cursor:pointer;
+flex-shrink:0;
+}
+
+.warn-actions{
+display:flex;
+justify-content:flex-end;
+}
+
+.warn-btn{
+min-width:200px;
+height:48px;
+border:none;
+background:#5a97df;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:.15s;
+}
+
+.warn-btn:disabled{
+background:#a9c4e6;
+cursor:not-allowed;
+}
+
+@media(max-width:600px){
+.warn-box .top h2{ font-size:24px; }
+.warn-btn{ width:100%; }
+.warn-actions{ justify-content:stretch; }
+}
+
+/* =========================
 FINAL
 ========================= */
 
@@ -606,6 +735,63 @@ padding:12px;
 </head>
 
 <body>
+
+<!-- AVISO / TERMO DE USO -->
+
+<div class="warn-overlay" id="warnOverlay">
+
+<div class="warn-box">
+
+<div class="top">
+
+<small>
+Antes de continuar, leia com atenção
+</small>
+
+<h2>
+Aviso de conteúdo sensível
+</h2>
+
+</div>
+
+<div class="warn-body">
+
+<p>
+Esta experiência é uma obra interativa e pode conter elementos que
+afetam pessoas com sensibilidade visual ou auditiva.
+</p>
+
+<ul>
+<li>Luzes piscantes e flashes que podem desencadear crises de epilepsia fotossensível.</li>
+<li>Efeitos visuais de glitch, distorção e mudança rápida de cores.</li>
+<li>Sons altos, ruídos abruptos e vibrações sonoras.</li>
+<li>Conteúdo que pode causar desconforto, tontura ou ansiedade.</li>
+</ul>
+
+<p>
+Caso você tenha histórico de epilepsia ou sensibilidade a esses estímulos,
+recomendamos não prosseguir.
+</p>
+
+<label class="warn-accept">
+<input type="checkbox" id="acceptCheck">
+<span>
+Li e estou ciente dos avisos acima e aceito os
+<strong>Termos de Uso</strong>, prosseguindo por minha conta e risco.
+</span>
+</label>
+
+<div class="warn-actions">
+<button class="warn-btn" id="acceptBtn" disabled>
+ACEITAR E CONTINUAR
+</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <div class="fake-site">
 
@@ -802,6 +988,20 @@ RETORNAR
 <audio id="openSound" src="SONS/OPEN.wav"></audio>
 
 <script>
+
+/* AVISO / TERMO DE USO */
+
+const warnOverlay = document.getElementById('warnOverlay');
+const acceptCheck = document.getElementById('acceptCheck');
+const acceptBtn = document.getElementById('acceptBtn');
+
+acceptCheck.addEventListener('change', () => {
+acceptBtn.disabled = !acceptCheck.checked;
+});
+
+acceptBtn.addEventListener('click', () => {
+warnOverlay.classList.add('hidden');
+});
 
 const overlay = document.getElementById('overlay');
 const loadingScreen = document.getElementById('loadingScreen');
